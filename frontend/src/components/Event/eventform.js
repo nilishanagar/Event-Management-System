@@ -61,7 +61,7 @@ const EventRegistrationForm = (props) => {
 
     if (props.action === "create"){
       console.log("Payload being sent to the server:", formData);
-      Axios.post("http://localhost:4000/eventRoute/create-event", formData)
+      Axios.post("https://event-management-system-backend-eyjc.onrender.com/eventRoute/create-event", formData)
       .then((res) => {
         if(res.status === 200)
         {
@@ -89,7 +89,7 @@ const EventRegistrationForm = (props) => {
         eventData.registeredUsers = eventData.registeredUsers;
         console.log("From updation page:",eventData);
         Axios.all([
-            Axios.put("http://localhost:4000/eventRoute/update-event/" + props.id, eventData)
+            Axios.put("https://event-management-system-backend-eyjc.onrender.com/eventRoute/update-event/" + props.id, eventData)
                 .then((updateResponce) => {
                     if (updateResponce.status === 200) {
                         alert("Event updated successfully");
@@ -101,7 +101,7 @@ const EventRegistrationForm = (props) => {
                 .catch((updateErr) => alert(updateErr)),
     
             // To get the list of users
-            Axios.get("http://localhost:4000/eventRoute/user-list")
+            Axios.get("https://event-management-system-backend-eyjc.onrender.com/eventRoute/user-list")
                 .then((userResponse) => {
                     if (userResponse.status === 200) {
                         // Finding users who have booked the current event
@@ -118,7 +118,7 @@ const EventRegistrationForm = (props) => {
                             });
     
                             // Updating the user details
-                            Axios.put("http://localhost:4000/eventRoute/update-user/" + collectedUsers[i]._id, userData)
+                            Axios.put("https://event-management-system-backend-eyjc.onrender.com/eventRoute/update-user/" + collectedUsers[i]._id, userData)
                                 .then((userUpdateResponse) => {
                                     if (userUpdateResponse.status === 200) {
                                         console.log("User details updated");
