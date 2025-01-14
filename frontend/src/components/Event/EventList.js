@@ -6,7 +6,7 @@ const EventList = () => {
   const [arr, setArr] = useState([])
 
   useEffect(() => {
-    Axios.get("http://localhost:4000/eventRoute/event-list")
+    Axios.get("https://event-management-system-backend-eyjc.onrender.com/eventRoute/event-list")
     .then((res) => {
       if(res.status === 200)
         setArr(res.data);
