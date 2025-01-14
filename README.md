@@ -8,7 +8,7 @@
 
 ### Backend:
 - The backend is deployed on **Render** (or **Railway.app**) and can be accessed at:
-  - **Backend URL**:( [https://your-backend-url.onrender.com](https://event-management-system-backend-eyjc.onrender.com))
+  - **Backend URL**: ([https://your-backend-url.onrender.com](https://event-management-system-backend-eyjc.onrender.com))
 
 ## Project Overview
 
