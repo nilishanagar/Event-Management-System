@@ -30,7 +30,7 @@ function EventCard(props) {
 
     // Function to book event
     const Book = () => {
-        Axios.get("http://localhost:4000/eventRoute/check-user/" + user)
+        Axios.get("https://event-management-system-backend-eyjc.onrender.com/eventRoute/check-user/" + user)
             .then((res) => {
                 if (res.status === 200) {
                     if (res.data != null) {
@@ -61,7 +61,7 @@ function EventCard(props) {
 
                             Axios.all([
                                 Axios.put(
-                                    "http://localhost:4000/eventRoute/update-user/" + res.data._id,
+                                    "https://event-management-system-backend-eyjc.onrender.com/eventRoute/update-user/" + res.data._id,
                                     userData
                                 )
                                     .then((updateResponse) => {
@@ -71,7 +71,7 @@ function EventCard(props) {
                                     .catch((updateError) => alert(updateError)),
 
                                 Axios.put(
-                                    "http://localhost:4000/eventRoute/update-event/" + _id,
+                                    "https://event-management-system-backend-eyjc.onrender.com/eventRoute/update-event/" + _id,
                                     eventData
                                 )
                                     .then((eventUpdateResponse) => {
